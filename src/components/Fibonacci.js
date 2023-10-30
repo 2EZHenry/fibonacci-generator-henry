@@ -26,17 +26,22 @@ const Fibonacci = () => {
 
   return (
     <div>
+      <label htmlFor='fibonacciInput'>Enter a number:</label>
       <input
         type='number'
-        placeholder='Enter your number here'
+        id='fibonacciInput'
+        placeholder='Enter a non-negative integer'
         onChange={(e) => {
-          const { value, array } = generateFibonacci(parseInt(e.target.value))
-          setResultArray(array)
-          setResultNum(value)
+          const inputNumber = parseInt(e.target.value)
+          if (!isNaN(inputNumber) && inputNumber >= 0) {
+            const { value, array } = generateFibonacci(inputNumber)
+            setResultArray(array)
+            setResultNum(value)
+          }
         }}
       />
-      <div>{resultArray.join(',')}</div>
-      <div> Result: {resultNum}</div>
+      <div>Fibonacci Sequence: {resultArray.join(',')}</div>
+      <div>Result: {resultNum}</div>
     </div>
   )
 }

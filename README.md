@@ -13,17 +13,24 @@ npm install --save fibonacci-generator-henry
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import MyComponent from 'fibonacci-generator-henry'
-import 'fibonacci-generator-henry/dist/index.css'
+import { ExampleComponent } from "fibonacci-generator-henry";
+import "fibonacci-generator-henry/dist/index.css";
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+// Your application code
+import React from 'react';
+
+function App() {
+  return (
+    <div>
+      <h1>My App</h1>
+      <ExampleComponent />
+    </div>
+  );
 }
-```
+
+export default App;
 
 ## License
 
